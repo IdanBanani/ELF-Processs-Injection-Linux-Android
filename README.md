@@ -1,7 +1,7 @@
 # Research Papers and Articles
 - [The Nexus between Static and Position Independent Code](https://tmpout.sh/1/10/)
 - [Enabling SHELF Loading in Chrome for fun and profit](https://tmpout.sh/2/5.html)
-- General Linux Process injection techniques (https://github.com/itaymigdal/awesome-injection#linux-injection)
+- [General Linux Process injection techniques] (https://github.com/itaymigdal/awesome-injection#linux-injection)
   
 # Projects and Code Repositories
 
