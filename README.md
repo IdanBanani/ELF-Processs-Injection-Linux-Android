@@ -1,3 +1,11 @@
+
+- [ ] Try to run the given injection techniques code.
+- [ ] Understand how each technique works
+- [ ] Understand the attack vector and the different parts (stages) of the chain    
+  (i.e the bridgehead shellcode, injection to process memory,LPE)
+- [ ] Injection vs patching at runtime?
+- [ ] Implement / imporve it by yourself.
+
 # Research Papers and Articles
 - [The Nexus between Static and Position Independent Code](https://tmpout.sh/1/10/)
 - [Enabling SHELF Loading in Chrome for fun and profit](https://tmpout.sh/2/5.html)
@@ -32,6 +40,8 @@
 - [Saruman ELF Virus](https://github.com/elfmaster/saruman/blob/master/launcher.c)
 
 ## Miscellaneous
+- [ElfMaster - ELF Internals projects (Injection, Patching etc.)](https://github.com/elfmaster)
+- [DEF CON 31 - Revolutionizing ELF binary patching w Shiva - ElfMaster](https://www.youtube.com/watch?v=TDMWejaucdg)
 - [CVE-2022-34918 Shellcode Generation](https://github.com/jiayy/android_vuln_poc-exp/blob/master/linux/CVE-2022-34918/generate_shellcode/gen_shellcode.sh)
 - [DDexec - Linux Binary Execution Technique](https://github.com/arget13/DDexec-)
 - [bhook - Android PLT Hook Library](https://github.com/bytedance/bhook)
