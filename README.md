@@ -3,11 +3,14 @@ Pull requests are welcomed.
 - [ ] Try to run the given injection techniques code.
 - [ ] Understand how each technique works
 - [ ] Understand the attack vector and the different parts (stages) of the chain    
-  (i.e the bridgehead shellcode, injection to process memory,LPE)
+  (i.e the bridgehead shellcode, injection to process memory,LPE, when to create a new process etc.)
+- [ ] Describe the need for a custom statically PIC compiled elf (Shared object library) loader shellcode.  
 - [ ] Injection vs patching at runtime?
 - [ ] Implement / imporve it by yourself.
 
 # Research Papers and Articles
+- [Linkers & Loaders](https://www.wh0rd.org/books/linkers-and-loaders/linkers_and_loaders.pdf) by John R. Levine (1999)
+- [Using procfs to execute ELF without touching the disk](https://blog.entysec.com/2023-04-02-remote-elf-loading/)
 - [The Nexus between Static and Position Independent Code](https://tmpout.sh/1/10/)
 - [Enabling SHELF Loading in Chrome for fun and profit](https://tmpout.sh/2/5.html)
 - [General Linux Process injection techniques](https://github.com/itaymigdal/awesome-injection#linux-injection)
