@@ -1,3 +1,4 @@
+Pull requests are welcomed.
 
 - [ ] Try to run the given injection techniques code.
 - [ ] Understand how each technique works
@@ -34,7 +35,7 @@
 ## 2014
 - [Insecurity - Elves for Linux](https://github.com/nima/insecurity/blob/master/elvez/elves.c)
 
-# Appendix / Somewhat Related
+# Appendix / Somewhat Related / Need to organize
 
 ## 2018
 - [Saruman ELF Virus](https://github.com/elfmaster/saruman/blob/master/launcher.c)
@@ -45,3 +46,10 @@
 - [CVE-2022-34918 Shellcode Generation](https://github.com/jiayy/android_vuln_poc-exp/blob/master/linux/CVE-2022-34918/generate_shellcode/gen_shellcode.sh)
 - [DDexec - Linux Binary Execution Technique](https://github.com/arget13/DDexec-)
 - [bhook - Android PLT Hook Library](https://github.com/bytedance/bhook)
+
+- [vfsfitvnm/intruducer](https://github.com/vfsfitvnm/intruducer)
+- [arget13/memdlopen](https://github.com/arget13/memdlopen)
+- [Shared Library Injection in Android](https://shunix.com/shared-library-injection-in-android/)
+- [Shellcode Android Internals CTF ex4](https://dev.to/wireless90/shellcode-android-internals-ctf-ex4-4357)
+- [Paper: 46043 - Android System Tracing: A Real-Life Story](https://www.exploit-db.com/papers/46043)
+- [ELF Shared Library Injection Forensics](https://engineering.backtrace.io/2016-04-14-elf-shared-library-injection-forensics/)
