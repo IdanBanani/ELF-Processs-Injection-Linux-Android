@@ -40,6 +40,19 @@ Pull requests are welcomed.
 
 # Appendix / Somewhat Related / Need to organize
 
+## Ptrace related (most implementations are based on it)
+**TODO**: how likely is it that the process you wish to inject to has already ptraced (attached) itself?, what would you do in such scenario?  
+- [Linux ptrace introduction AKA injecting into sshd for fun - XPN InfoSec Blog](https://blog.xpnsec.com/linux-process-injection-aka-injecting-into-sshd-for-fun/)
+- [Linux Kernel Dirty COW PTRACE_POKEDATA Privilege Escalation - exploit database | Vulners.com](https://vulners.com/packetstorm/PACKETSTORM:139923)
+- [Code search results on GitHub (ProcDump for Linux - ptrace)](https://github.com/search?q=repo%3ASysinternals%2FProcDump-for-Linux%20ptrace&type=code)
+- [HookProcessEvent: PtraceInject.h at main · Jingle-BF/HookProcessEvent](https://github.com/Jingle-BF/HookProcessEvent/blob/main/app/src/main/cpp/include/PtraceInject/include/PtraceInject.h)
+- [Code search results on GitHub (PTRACE_SETREGSET, NT_PRSTATUS, PTRACE_SETREGS, CPSR_T_MASK)](https://github.com/search?q=%22ptrace%28PTRACE_SETREGSET%22+NT_PRSTATUS+PTRACE_SETREGS+PTRACE_CONT+CPSR_T_MASK+PTRACE_POKEDATA&type=code)
+- [W3ndige/linux-process-injection: Proof of concept for injecting simple shellcode via ptrace](https://github.com/W3ndige/linux-process-injection)
+  ### TODO: Check if helpful
+- [Ptrace pokedata Input/output error in memory injection - Stack Overflow](https://stackoverflow.com/questions/76393009/ptrace-pokedata-input-output-eror-in-memory-injection)
+- [Ptrace(PTRACE_PEEKDATA, ...) error: data dump - Stack Overflow](https://stackoverflow.com/questions/53213591/ptraceptrace-peekdata-error-data-dump)
+Watch for ptrace alignment issues?
+
 ## 2018
 - [Saruman ELF Virus](https://github.com/elfmaster/saruman/blob/master/launcher.c)
 
