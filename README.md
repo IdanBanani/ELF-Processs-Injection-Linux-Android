@@ -268,6 +268,46 @@ namespace, RELRO file, and dependency set. It is not a general guarantee that an
 arbitrary late injector can force deterministic placement with one remote
 `mmap`.
 
+**Effects and implications of the WebView pattern**
+
+WebView is useful to study because it shows the intended end-to-end contract for
+reserved-address plus RELRO loading:
+
+- **The reservation is inherited, not guessed.** The zygote creates a large
+  anonymous `PROT_NONE` reservation before forking app processes. Descendants
+  inherit the same virtual address hole, so later WebView loads can ask the
+  linker to consume that known range. This is much stronger than scanning a
+  post-fork process for a convenient gap.
+- **RELRO is generated from an address-specific load.** A separate RELRO creator
+  process loads the WebView library into the reserved range with
+  `ANDROID_DLEXT_WRITE_RELRO`. The generated file contains relocated read-only
+  pages whose contents only match future loads if the relevant layout and
+  dependency state match.
+- **Later app loads reuse, not relocate-from, the RELRO file.** App processes
+  load the same library with the same reservation and `ANDROID_DLEXT_USE_RELRO`.
+  The linker still performs a real load and relocation; the RELRO file lets it
+  replace matching read-only relocated pages with file-backed shared pages.
+- **The practical win is memory sharing and predictable layout.** Many apps use
+  WebView, so sharing identical relocated RELRO pages reduces per-process memory
+  cost. Predictable placement is what makes that sharing possible.
+- **The cost is address-space commitment.** The reserved hole must be large
+  enough for the main library and newly loaded dependencies. Android can reserve
+  generously on 64-bit, but the same idea is much more constrained on 32-bit.
+- **The dependency set matters.** Recursive reserved-address loading applies to
+  newly loaded dependencies. If a dependency is already loaded in one process but
+  not another, the reserved-range consumption and RELRO contents can differ.
+- **Failure degrades the optimization or the strict load.** If strict reserved
+  placement cannot be satisfied, the linker-managed load can fail. If RELRO
+  pages do not match, RELRO sharing is reduced or skipped for those pages rather
+  than becoming a magic placement fix.
+
+For injection research, the implication is specific: if code is running only in
+a normal post-fork app process, it cannot make unrelated target processes inherit
+that app's local reservation. To get WebView-like determinism across future
+targets, the reservation has to be created in a common ancestor such as zygote,
+or each target must be handled independently with its own target-side
+reservation.
+
 Bionic's own `dlext_test.cpp` also exercises the behavior directly:
 `RESERVED_ADDRESS` loads inside a pre-reserved range, `RESERVED_ADDRESS_HINT`
 falls back when the range is unsuitable, too-small strict reservations fail, and
